@@ -1,0 +1,145 @@
+// .home__container {
+//     border-radius: 30px;
+//     background: linear-gradient(145deg, #18202a, #141b23);
+//     box-shadow:  5px 5px 19px #090c10,
+//                 -5px -5px 19px #23303e;
+    
+//     box-sizing: border-box;
+//     overflow: hidden;
+
+// }
+
+
+.home__content {
+    grid-template-columns: 116px repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    padding-top: 15rem;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.home__box {
+    border-radius: 30px;
+    background: linear-gradient(145deg, #18202a, #141b23);
+    box-shadow:  5px 5px 19px #090c10,
+                -5px -5px 19px #23303e;
+}
+
+.home__social {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+    z-index: 2;
+}
+
+.home__social-icon {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.home__title{
+    margin-top: var(--mb-0-25);
+    font-size: var(--big-font-size);
+    margin-bottom: var(--mb-0-25);
+}
+
+.home__subtitle{
+    position: relative;
+    font-size: var(--h3-font-size);
+    padding-right: 5.4rem;
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+.home__description{
+    max-width: 400px;
+    margin-bottom: var(--mb-3);
+}
+
+.home__img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    background: url(../../assets/Ken_2.JPG);
+    justify-self: center;
+    animation: profile__animate 8s ease-in-out infinite 1s;
+}
+
+
+@keyframes profile__animate {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 40% 70%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+.blank__div{
+    display: grid;
+}
+
+
+@media screen and (max-width: 992px) {
+    .home__content {
+        grid-template-columns: 100px repeat(2, 1fr);
+        column-gap: 1.25rem;
+    }
+
+    .home__subtitle {
+        padding-right: 3.75rem;
+        margin-bottom: var(--mb-1);
+    }
+
+    .home__description{
+        max-width: initial;
+        margin-bottom: var(--mb-2-5);
+    }
+
+    .home__img {
+        width: 250px;
+        height: 250px;
+        box-shadow: inset 0 0 0 8px rgb(255, 255, 255);
+    }
+
+    .home__social-icon{
+        font-size: 2rem;
+        margin: 0.75rem;
+    
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home__content {
+        grid-template-columns: 0.5fr 3fr;
+        padding: 3.5rem;
+
+    }
+
+    .home__img {
+        order: -1;
+        justify-self: initial;
+        box-shadow: inset 0 0 0 6px rgb(255, 255, 255);
+        width: 200px;
+        height: 200px;
+    }
+
+    .home__data {
+        grid-column: 1/3;
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    
+}
+
+@media screen and (max-width: 350px){
+    
+}
