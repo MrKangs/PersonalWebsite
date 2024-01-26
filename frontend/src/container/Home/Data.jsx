@@ -1,5 +1,7 @@
-import React from 'react'
+import { client } from '../../client';
+import React, {useEffect, useState} from 'react'
 import { NightContext } from '../../contexts';
+
 
 const Data = () => {
   const isNight = React.useContext(NightContext);
@@ -8,11 +10,27 @@ const Data = () => {
     'color': isNight ? 'white' : 'black'
   };
 
+  const [home, sethome] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const query = '*[_type == "profile"]'
+
+    client.fetch(query)
+      .then((data) => {
+        sethome(data);
+        setLoading(false);})
+    }, []);
+
+  if (loading) {
+    return <div></div>;
+  }
+
   return (
     <div className="home__data" >
-        <h1 className="home__title" style={textColor}>Kenneth Kang</h1>
-        <h3 className="home__subtitle" style={textColor}>Data Scientist/Data Analyst</h3>
-        <p className="home__description" style={textColor}>Hello! My name is Kenneth Kang! It is a pleasure seeing you here on my personal website. I post my projects on what I have done, food posts that I have either visited or made by myself, and my resume. Hope you find this website useful to you.</p>
+        <h1 className="home__title" style={textColor}>{home[0]["name"]}</h1>
+        <h3 className="home__subtitle" style={textColor}>{home[0]["title"]}</h3>
+        <p className="home__description" style={textColor}>{home[0]["shortbio"]}</p>
     </div>
   )
 }

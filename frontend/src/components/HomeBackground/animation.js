@@ -28,7 +28,7 @@ const HomeBackground = () => {
   const [endPoint, setEndPoint] = useState(0);
 
   const generateStars = () => {
-    const starCount = 33;
+    const starCount = 69;
     const starsArray = [];
 
     for (let i = 0; i < starCount; i++) {

@@ -1,14 +1,28 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Social from './Social';
 import Data from './Data';
 import {HomeBackground} from '../../components';
 import './Home.scss';
-import { NightContext } from '../../contexts';
+import {client, urlFor} from '../../client';
 
 const Home = () => {
 
-  const isNight = useContext(NightContext);
+  const [home, sethome] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const query = '*[_type == "profile"]'
+
+    client.fetch(query)
+      .then((data) => {
+        sethome(data);
+        setLoading(false);})
+    }, []);
+
+  if (loading) {
+    return <div></div>;
+  }
 
   return (
     <>
@@ -19,7 +33,9 @@ const Home = () => {
           
           <div className="blank__div"></div>
           <Data />
-          <div className={isNight ? 'home__img__night' : 'home__img'}></div>
+          <div className='home__img'>
+            <img src={urlFor(home[0].image)} alt="my Profile Picture" />
+          </div>
           <div className="blank__div"></div>
           <div className="blank__div"></div>
           <Social />

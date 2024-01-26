@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.textColor};
     margin: 0;
     padding: 0;
-    overflow: hidden;
   }
   `
   ;
@@ -27,7 +26,7 @@ const Background = () => {
   const [stars, setStars] = useState([]);
 
   const generateStars = () => {
-    const starCount = 33;
+    const starCount = 69;
     const starsArray = [];
 
     for (let i = 0; i < starCount; i++) {

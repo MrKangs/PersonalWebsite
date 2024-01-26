@@ -1,6 +1,7 @@
 import './App.scss'
 import React, { useState, useEffect } from 'react'
 import moment from 'moment';
+import {client} from './client';
 import {Home, About, Foods, Projects, Resume} from './container';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import {Navbar, ParticlesComponent} from './components'

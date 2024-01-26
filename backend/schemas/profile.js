@@ -35,7 +35,10 @@ export default {
                 {
                     name: 'link',
                     title: 'Link',
-                    type: 'url'
+                    type: 'url',
+                    validation: Rule => Rule.uri({
+                        scheme: ['http', 'https', 'mailto', 'tel']
+                    })
                 }
             ]
         }
