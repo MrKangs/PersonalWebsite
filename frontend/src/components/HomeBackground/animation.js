@@ -122,7 +122,7 @@ const HomeBackground = () => {
     width: 90%;
     height: 90%;
     overflow: hidden;
-    animation: linear 1 ${riseAnimation} 10s forwards;
+    animation: 1 ${riseAnimation} 10s forwards ease-in-out;
   `;
 
   const textColor = background.textWhite ? '#fff' : '#000';

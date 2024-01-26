@@ -1,5 +1,5 @@
 
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Social from './Social';
 import Data from './Data';
 import {HomeBackground} from '../../components';
