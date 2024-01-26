@@ -10,12 +10,6 @@ const Home = () => {
 
   const isNight = useContext(NightContext);
 
-  console.log(isNight);
-
-  const imageBorderColor = {
-    'boxShadow': isNight ? 'inset 0 0 0 9px rgb(255, 255, 255)' : 'inset 0 0 0 9px rgb(0, 0, 0)'
-  };
-
   return (
     <>
     <HomeBackground/>
@@ -25,7 +19,7 @@ const Home = () => {
           
           <div className="blank__div"></div>
           <Data />
-          <div className="home__img" style={imageBorderColor}></div>
+          <div className={isNight ? 'home__img__night' : 'home__img'}></div>
           <div className="blank__div"></div>
           <div className="blank__div"></div>
           <Social />

@@ -53,6 +53,7 @@
 
 html {
     scroll-behavior: smooth;
+    height: fit-content;
 }
 
 body, button, input, textarea {
@@ -63,8 +64,10 @@ body, button, input, textarea {
 
 body {
     background-color: var(--body-color);
+    height: fit-content;
     // background-color: black;
     color: var(--text-color);
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -170,6 +173,10 @@ img {
         --normal-font-size: 1rem;
         --small-font-size: 0.75rem;
         --smaller-font-size: 0.625rem;
+    }
+
+    .section {
+        padding: 2rem 0 4rem;
     }
 }
 

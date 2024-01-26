@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.textColor};
     margin: 0;
     padding: 0;
-    overflow: hidden;
   }
   `
   ;
@@ -117,7 +116,7 @@ const HomeBackground = () => {
   `;
 
   const RiseElement = styled.div`
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 5%;
     width: 90%;
