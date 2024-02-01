@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Social from './Social';
 import Data from './Data';
 import {HomeBackground} from '../../components';
+import {Background} from '../../components';
 import './Home.scss';
 import {client, urlFor} from '../../client';
 

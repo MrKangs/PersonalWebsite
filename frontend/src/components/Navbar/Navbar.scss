@@ -62,7 +62,7 @@
         left: 0;
         width: 100%;
         padding: 2rem 1.5rem 4rem;
-        // box-shadow: 0 -1px 4px rgba(255, 255, 255, 0.15);
+        box-shadow: 0 -1px 4px rgba(255, 255, 255, 0.15);
         background-color: transparent;
         border-radius: 1.5rem 1.5rem 0 0;
         transition: .3s;
@@ -99,12 +99,6 @@
     .nav__icon,
     .nav__toggle {
         display: block;
-    }
-
-    .nav__close__close,
-    .nav__icon__close,
-    .nav__toggle__close {
-        display: none;
     }
 }
 

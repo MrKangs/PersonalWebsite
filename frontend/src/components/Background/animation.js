@@ -43,43 +43,66 @@ const Background = () => {
   const updateBackground = () => {
     const currentHour = moment().hour();
 
-    if (currentHour >= 6 && currentHour < 7) {
+    if (currentHour >= 0 && currentHour < 4) {
       setBackground({
-        backgroundSky: 'dawn',
+        backgroundSky: '0__4',
         isNight: true,
-        textWhite: false,
-      });
-    } else if (currentHour >= 7 && currentHour < 12) {
-      setBackground({
-        backgroundSky: 'dawn',
-        isNight: false,
-        textWhite: false,
-      });
-    } else if (currentHour >= 12 && currentHour < 18) {
-      setBackground({
-        backgroundSky: 'noon',
-        isNight: false,
         textWhite: true,
+      });
+    } else if (currentHour >= 4 && currentHour < 6) {
+      setBackground({
+        backgroundSky: '4__8',
+        isNight: true,
+        textWhite: true,
+      });
+    } else if (currentHour >= 6 && currentHour < 7) {
+      setBackground({
+        backgroundSky: '4__8',
+        isNight: true,
+        textWhite: true,
+      });
+    } else if (currentHour >= 7 && currentHour < 8) {
+      setBackground({
+        backgroundSky: '4__8',
+        isNight: false,
+        textWhite: false,
+      });
+    } else if (currentHour >= 8 && currentHour < 12) {
+      setBackground({
+        backgroundSky: '8__12',
+        isNight: false,
+        textWhite: false,
+      });
+    } else if (currentHour >= 12 && currentHour < 16) {
+      setBackground({
+        backgroundSky: '12__16',
+        isNight: false,
+        textWhite: false,
+      });
+    } else if (currentHour >= 16 && currentHour < 18) {
+      setBackground({
+        backgroundSky: '16__20',
+        isNight: false,
+        textWhite: false,
       });
     } else if (currentHour >= 18 && currentHour < 19) {
       setBackground({
-        backgroundSky: 'dusk',
+        backgroundSky: '16__20',
         isNight: false,
         textWhite: true,
       });
-    } else if (currentHour >= 19 && currentHour < 24) {
+    } else if (currentHour >= 19 && currentHour < 20) {
       setBackground({
-        backgroundSky: 'dusk',
+        backgroundSky: '16__20',
         isNight: true,
         textWhite: true,
       });
-    } else {
+    } else if (currentHour >= 20 && currentHour < 24) {
       setBackground({
-        backgroundSky: 'midnight',
+        backgroundSky: '20__24',
         isNight: true,
         textWhite: true,
       });
-
     }
 
     generateStars();
@@ -98,7 +121,7 @@ const Background = () => {
       <GlobalStyle textColor={textColor} />
       <Navbar backgroundSky = {background.backgroundSky} />
       <div className="sky">
-        <div className={`sky__phase__d sky__${background.backgroundSky}__d`}></div>
+      <div className={`sky__phase__d sky__${background.backgroundSky}__2`}></div>
         <div>
           {background.isNight && (
             <div className="stars">

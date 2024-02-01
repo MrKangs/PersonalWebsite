@@ -47,58 +47,91 @@ const HomeBackground = () => {
     const currentHour = moment().hour();
     const minutePercentage = moment().minute() / 60;
 
-    if (currentHour >= 6 && currentHour < 7) {
+    if (currentHour >= 0 && currentHour < 4) {
       setBackground({
-        backgroundSky: ['dawn'],
-        object: '',
+        backgroundSky: ['16__20__m','20__24','0__4'],
+        object: 'moon',
         isNight: true,
-        textWhite: false,
-      });
-    } else if (currentHour >= 7 && currentHour < 12) {
-      setBackground({
-        backgroundSky: ['dawn'],
-        object: 'sun',
-        isNight: false,
-        textWhite: false,
-      });
-      endDegreePercentage = 27 * (currentHour + minutePercentage) - 189;
-    } else if (currentHour >= 12 && currentHour < 18) {
-      setBackground({
-        backgroundSky: ['dawn', 'noon'],
-        object: 'sun',
-        isNight: false,
         textWhite: true,
       });
-      endDegreePercentage = 17 * (currentHour + minutePercentage) - 69;
+      endDegreePercentage = 15 * (currentHour + minutePercentage) + 90;
+    } else if (currentHour >= 4 && currentHour < 6) {
+      setBackground({
+        backgroundSky: ['16__20__m','20__24', '0__4', '4__8__m'],
+        object: 'moon',
+        isNight: true,
+        textWhite: true,
+      });
+      endDegreePercentage = 15 * (currentHour + minutePercentage) + 90;
+    } else if (currentHour >= 6 && currentHour < 7) {
+      setBackground({
+        backgroundSky: ['4__8__s'],
+        object: 'sun',
+        isNight: true,
+        textWhite: true,
+      });
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 90;
+    } else if (currentHour >= 7 && currentHour < 8) {
+      setBackground({
+        backgroundSky: ['4__8__s'],
+        object: 'sun',
+        isNight: false,
+        textWhite: false,
+      });
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 90;
+    } else if (currentHour >= 8 && currentHour < 12) {
+      setBackground({
+        backgroundSky: ['4__8__s', '8__12'],
+        object: 'sun',
+        isNight: false,
+        textWhite: false,
+      });
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 90;
+    } else if (currentHour >= 12 && currentHour < 16) {
+      setBackground({
+        backgroundSky: ['4__8__s', '8__12', '12__16'],
+        object: 'sun',
+        isNight: false,
+        textWhite: false,
+      });
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 90;
+    } else if (currentHour >= 16 && currentHour < 18) {
+      setBackground({
+        backgroundSky: ['4__8__s', '8__12', '12__16', '16__20__s'],
+        object: 'sun',
+        isNight: false,
+        textWhite: false,
+      });
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 270;
     } else if (currentHour >= 18 && currentHour < 19) {
       setBackground({
-        backgroundSky: ['dusk'],
-        object: '',
+        backgroundSky: ['16__20__m'],
+        object: 'moon',
         isNight: false,
         textWhite: true,
       });
-    } else if (currentHour >= 19 && currentHour < 24) {
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 270;
+    } else if (currentHour >= 19 && currentHour < 20) {
       setBackground({
-        backgroundSky: ['dusk'],
+        backgroundSky: ['16__20__m'],
         object: 'moon',
         isNight: true,
         textWhite: true,
       });
-      endDegreePercentage = 27 * (currentHour + minutePercentage) - 513;
-    } else {
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 270;
+    } else if (currentHour >= 20 && currentHour < 24) {
       setBackground({
-        backgroundSky: ['dusk', 'midnight'],
+        backgroundSky: ['16__20__m', '20__24'],
         object: 'moon',
         isNight: true,
         textWhite: true,
       });
-
-      endDegreePercentage = 17 * (currentHour + minutePercentage) + 135;
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 270;
     }
 
-    setEndPoint(endDegreePercentage);
+      setEndPoint(endDegreePercentage);
 
-    generateStars();
+      generateStars();
   };
   
 
@@ -119,10 +152,11 @@ const HomeBackground = () => {
     position: fixed;
     bottom: 0;
     left: 5%;
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 13%;
     overflow: hidden;
     animation: 1 ${riseAnimation} 10s forwards ease-in-out;
+    z-index: -4;
   `;
 
   const textColor = background.textWhite ? '#fff' : '#000';

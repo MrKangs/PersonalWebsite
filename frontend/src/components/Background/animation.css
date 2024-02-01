@@ -1,39 +1,3 @@
-@keyframes dawn_2 {
-	0% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes noon_2 {
-	0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes dusk_2 {
-  0% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes midnight_2 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .sky {
 	width: 100%;
 	height: 100%;
@@ -49,45 +13,57 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
-	/* transition: opacity 0.2s; */
+	transition: opacity 0.2s;
 	z-index: -1;
 	overflow: hidden;
 }
 
-.sky__dawn__d {
+.sky__0__4__2 {
 	background: linear-gradient(
 		0deg,
-		rgba(254, 215, 102, 1) 0%,
-		rgba(205, 237, 246, 1) 100%
+		rgba(10, 1, 33, 1) 0%,
+		rgba(4, 0, 14, 1) 100%
 	);
-	animation: linear dawn_2 1 0s forwards;
 }
 
-.sky__noon__d {
+.sky__4__8__2 {
+	background: linear-gradient(
+		0deg,
+		rgba(225, 210, 196, 1) 0%,
+		rgba(195, 225, 243, 1) 80%
+	);
+}
+
+.sky__8__12__2 {
+	background: linear-gradient(
+		0deg,
+		rgba(255, 244, 214, 1) -20%,
+		rgba(140, 184, 228, 1) 100%
+	);
+}
+
+.sky__12__16__2 {
 	background: linear-gradient(
 		0deg,
 		rgba(205, 237, 246, 1) 0%,
-		rgba(36, 123, 160, 1) 100%
+		rgba(111, 172, 225, 1) 90%
 	);
-	animation: linear noon_2 1 0s forwards;
 }
 
-.sky__dusk__d {
+.sky__16__20__2 {
 	background: linear-gradient(
 		0deg,
-		rgba(255, 32, 110, 1) 0%,
-		rgba(10, 0, 94, 1) 100%
+		rgba(206, 172, 144, 1) -10%,
+		rgba(101, 118, 176, 1) 100%
 	);
-	animation: linear dusk_2 1 0s forwards;
 }
 
-.sky__midnight__d {
+.sky__20__24__2 {
 	background: linear-gradient(
 		0deg,
-		rgba(2, 0, 20, 1) 0%,
+		rgba(100, 125, 176, 0.6) -40%,
 		rgba(10, 0, 94, 1) 100%
 	);
-	animation: linear midnight_2 1 0s forwards;
 }
 
 .stars {

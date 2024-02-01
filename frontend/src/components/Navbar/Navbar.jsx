@@ -36,21 +36,29 @@ const Navbar = ({backgroundSky}) => {
       skyPhase = backgroundSky;
     }
 
-    if (skyPhase === 'dawn') {
+    if (skyPhase === '12__16') {
       return {
-        backgroundColor: 'rgba(244, 220, 138, 1)',
+        backgroundColor: 'rgba(184, 222, 241, 1)',
       };
-    } else if (skyPhase === 'noon') {
+    } else if (skyPhase === '16__20__m' || skyPhase === '16__20__s') {
       return {
-        backgroundColor: 'rgba(174, 215, 229, 1)',
+        backgroundColor: 'rgba(176, 157, 154, 1)',
       };
-    } else if (skyPhase === 'dusk') {
+    } else if (skyPhase === '20__24') {
       return {
-        backgroundColor: 'rgba(211, 26, 107, 1)',
+        backgroundColor: 'rgba(83, 86, 137, 1)',
       };
-    } else if (skyPhase === 'midnight') {
+    } else if (skyPhase === '0__4') {
       return {
-        backgroundColor: 'rgba(6, 2, 38, 1)',
+        backgroundColor: 'rgba(11, 3, 28, 1)',
+      };
+    } else if (skyPhase === '4__8__s' || skyPhase === '4__8__m') {
+      return {
+        backgroundColor: 'rgba(217, 214, 207, 1)',
+      };
+    } else if (skyPhase === '8__12') {
+      return {
+        backgroundColor: 'rgba(218, 225, 219, 1)',
       };
     }
   };
@@ -64,7 +72,7 @@ const Navbar = ({backgroundSky}) => {
   return (
     <header className="header">
       <nav className='nav container'>
-        <a href='/' className={Toggle ? '': 'nav__logo'} style={textColor}>Mr.Kangs</a>
+        <a href='/' className='nav__logo' style={textColor}>Mr.Kangs</a>
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"} style={Toggle ? toggleMenuColor :  menuColor} >
           <ul className='nav__list grid'>
