@@ -163,8 +163,9 @@ const HomeBackground = () => {
 
   return (
     <>
-      <Navbar backgroundSky = {background.backgroundSky} />
+      
       <GlobalStyle textColor={textColor} />
+      <Navbar backgroundSky = {background.backgroundSky} />
       <div className="sky">
         {background.backgroundSky.map((phase, index) => (
           <div key={index} className={`sky__phase sky__${phase}`}></div>

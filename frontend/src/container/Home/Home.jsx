@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Social from './Social';
 import Data from './Data';
 import {HomeBackground} from '../../components';
-import {Background} from '../../components';
 import './Home.scss';
 import {client, urlFor} from '../../client';
 
@@ -13,7 +12,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const query = '*[_type == "profile"]'
+    const query = '*[_type == "profile"]';
 
     client.fetch(query)
       .then((data) => {

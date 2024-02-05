@@ -42,17 +42,13 @@ export default {
             ]
         },
         {
-            name: 'tags',
-            title: 'Tags',
-            type: 'array',
-            of: [
-                {
-                    type: 'string'
-                }
-            ],
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
             options: {
-                layout: 'tags'
+                source: 'title',
+                maxLength: 96
             }
-        }
+        },
     ]
 }

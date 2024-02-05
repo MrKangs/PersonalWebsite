@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   `
   ;
 
+
 const Background = () => {
   const [background, setBackground] = useState({
     backgroundSky: '',

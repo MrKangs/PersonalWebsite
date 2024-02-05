@@ -10,6 +10,15 @@ export default {
             description: 'Title of the project'
         },
         {
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+                maxLength: 96
+            }
+        },
+        {
             name: 'description',
             title: 'Description',
             description: 'Description of the project',
@@ -19,24 +28,6 @@ export default {
             name: "image",
             title: "Image",
             type: "image",
-        },
-        {
-            name: 'link',
-            title: 'Link',
-            type: 'url'
-        },
-        {
-            name: 'tags',
-            title: 'Tags',
-            type: 'array',
-            of: [
-                {
-                    type: 'string'
-                }
-            ],
-            options: {
-                layout: 'tags'
-            }
         }
     ]
 }

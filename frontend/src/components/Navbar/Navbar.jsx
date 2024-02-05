@@ -33,6 +33,7 @@ const Navbar = ({backgroundSky}) => {
     if (Array.isArray(backgroundSky) && backgroundSky.length > 0) {
       skyPhase = backgroundSky.slice(-1)[0];
     } else {
+      console.log(backgroundSky, typeof(backgroundSky));
       skyPhase = backgroundSky;
     }
 
@@ -40,7 +41,7 @@ const Navbar = ({backgroundSky}) => {
       return {
         backgroundColor: 'rgba(184, 222, 241, 1)',
       };
-    } else if (skyPhase === '16__20__m' || skyPhase === '16__20__s') {
+    } else if (skyPhase === '16__20__m' || skyPhase === '16__20__s' || skyPhase === '16__20') {
       return {
         backgroundColor: 'rgba(176, 157, 154, 1)',
       };
@@ -52,7 +53,7 @@ const Navbar = ({backgroundSky}) => {
       return {
         backgroundColor: 'rgba(11, 3, 28, 1)',
       };
-    } else if (skyPhase === '4__8__s' || skyPhase === '4__8__m') {
+    } else if (skyPhase === '4__8__s' || skyPhase === '4__8__m' || skyPhase === '4__8') {
       return {
         backgroundColor: 'rgba(217, 214, 207, 1)',
       };
@@ -82,7 +83,7 @@ const Navbar = ({backgroundSky}) => {
               </a>
             </li>
             <li className='nav__item'>
-              <a href='/resume'style={textColor} className='nav__link' >
+              <a download="" href="https://drive.google.com/file/d/1PaRs4T1l_ntstGP0VMGLSk5837I3kGN4/view?usp=sharing" target='_blank' style={textColor} className='nav__link' >
                 <i className='uil uil-file-alt nav__icon'></i> Resume
               </a>
             </li>
