@@ -1,7 +1,7 @@
 import './App.scss'
 import React, { useState, useEffect } from 'react'
 import moment from 'moment';
-import {Home, About, Foods, Projects, ProjectDetails} from './container';
+import {Home, About, Foods, Projects, ProjectDetails, Error} from './container';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import {Navbar, ParticlesComponent} from './components'
 import {NightContext} from './contexts'
@@ -38,7 +38,7 @@ const App = () => {
           <Route path="/foods" element={<Foods />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetails />} />
-          
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
       </NightContext.Provider>

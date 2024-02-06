@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.scss';
 import { Background } from '../../components';
@@ -9,7 +9,7 @@ const Projects = () => {
   const [projectOverview, setProjectOverview] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const isNight = React.useContext(NightContext);
+  const isNight = useContext(NightContext);
 
   const textColor = {
     'color': isNight ? 'white' : 'black'

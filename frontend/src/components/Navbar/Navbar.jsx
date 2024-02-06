@@ -33,7 +33,6 @@ const Navbar = ({backgroundSky}) => {
     if (Array.isArray(backgroundSky) && backgroundSky.length > 0) {
       skyPhase = backgroundSky.slice(-1)[0];
     } else {
-      console.log(backgroundSky, typeof(backgroundSky));
       skyPhase = backgroundSky;
     }
 
