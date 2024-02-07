@@ -23,7 +23,7 @@ const Projects = () => {
     }, []);
   
   if (loading) {
-    return <div></div>;
+    return <div><Background /></div>;
   }
 
   return (

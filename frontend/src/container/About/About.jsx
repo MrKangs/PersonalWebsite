@@ -10,7 +10,7 @@ const About = () => {
     'color': isNight ? 'white' : 'black'
   };
 
-  const [about, setAbout] = useState([]);
+  const [about, setAbout] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,10 +21,9 @@ const About = () => {
     });
   }, []);
 
-  console.log(about[0]['bio'][0]['children'][0]['text']);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><Background/></div>;
   }
 
   return (
@@ -32,10 +31,14 @@ const About = () => {
     <Background/>
     <section className='about section' id="about">
       <div className="about__container container grid">
+      <h1 className="about__title" style={textColor}>{about[0].title}</h1>
         <div className="about__content grid">
+        <img src={urlFor(about[0].image)} alt="my Profile Picture" className="about__img"/>
           <div className="about__data">
-            <h1 className="about__title" style={textColor}>About Me</h1>
-            {/* <p className="about__description" style={textColor}>{about[0].description}</p> */}
+            {about[0].bio.map((paragraph, index) => (
+              <p key={index} className="about__p" style={textColor}>{paragraph}</p>
+            ))
+            }
           </div>
         </div>
       </div>
