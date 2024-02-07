@@ -10,20 +10,15 @@ export default {
         description: "Title of the about section"
         },
         {
-        name: "image1",
-        title: "Image 1",
+        name: "image",
+        title: "Image",
         type: "image",
         },
-        {
-            name: "image2",
-            title: "Image 2",
-            type: "image",
-            },
         {
             name: 'bio',
             title: 'Bio',
             type: 'array',
-            of: [{type: 'block'}]
+            of: [{type: 'string'}]
         },
         {
         name: "links",

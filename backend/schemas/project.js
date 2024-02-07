@@ -10,6 +10,24 @@ export default {
             description: 'Title of the project'
         },
         {
+            name: 'subtitle',
+            title: 'Subtitle',
+            type: 'string',
+            description: 'Subtitle of the project'
+        },
+        {
+            name: 'startdate',
+            title: 'Start Date',
+            type: 'date',
+            description: 'Start Date of the project'
+        },
+        {
+            name: 'enddate',
+            title: 'End Date',
+            type: 'date',
+            description: 'End Date of the project'
+        },        
+        {
             name: 'skills',
             title: 'Skills',
             type: 'array',
@@ -24,7 +42,7 @@ export default {
             title: 'Description',
             description: 'Description of the project',
             type: 'array',
-            of: [{type: 'block'}]
+            of: [{type: 'string'}]
         },
         {
             name: "image",
