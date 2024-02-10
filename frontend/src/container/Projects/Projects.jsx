@@ -56,3 +56,6 @@ const Projects = () => {
 }
 
 export default Projects
+
+
+// Unique font for the Project Title (not the project names)

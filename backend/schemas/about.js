@@ -10,27 +10,99 @@ export default {
         description: "Title of the about section"
         },
         {
-        name: "image",
-        title: "Image",
+        name: "image1",
+        title: "Intro Image",
         type: "image",
         },
         {
-            name: 'bio',
-            title: 'Bio',
-            type: 'array',
-            of: [{type: 'string'}]
+            name: "image2",
+            title: "Work Image",
+            type: "image",
         },
         {
-        name: "links",
-        title: "Links",
-        type: "array",
-        of: [
-            {
-            name: "link",
-            title: "Link",
-            type: "url",
-            },
-        ],
+            name: "image3",
+            title: "Skills Image",
+            type: "image",
         },
+        {
+            name: "image4",
+            title: "Hobbies Image",
+            type: "image",
+        },
+        {
+            name: "image5",
+            title: "Goals Image",
+            type: "image",
+        },
+        {
+            name: 'intro',
+            title: 'Intro',
+            type: 'array',
+            of: [
+              {
+                type: 'block',
+                lists: [
+                    {title: 'Bullet', value: 'bullet'},
+                    {title: 'Numbered', value: 'number'}
+                  ]  
+              }
+            ]
+        },
+        {
+            name: 'work',
+            title: 'Work',
+            type: 'array',
+            of: [
+              {
+                type: 'block',
+                lists: [
+                    {title: 'Bullet', value: 'bullet'},
+                    {title: 'Numbered', value: 'number'}
+                  ]   
+              }
+            ]
+        },
+        {
+            name: 'hobbies',
+            title: 'Hobbies',
+            type: 'array',
+            of: [
+              {
+                type: 'block',
+                lists: [
+                    {title: 'Bullet', value: 'bullet'},
+                    {title: 'Numbered', value: 'number'}
+                  ]   
+              }
+            ]
+        },
+        {
+            name: 'goals',
+            title: 'Goals',
+            type: 'array',
+            of: [
+              {
+                type: 'block',
+                lists: [
+                    {title: 'Bullet', value: 'bullet'},
+                    {title: 'Numbered', value: 'number'}
+                  ]   
+              }
+            ]
+        },
+        {
+            name: 'skills',
+            title: 'Skills',
+            type: 'array',
+            of: [
+              {
+                type: 'block',
+                lists: [
+                    {title: 'Bullet', value: 'bullet'},
+                    {title: 'Numbered', value: 'number'}
+                  ]   
+              }
+            ]
+        }
     ],
 }

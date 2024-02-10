@@ -15,9 +15,25 @@
   
     &__data {
       padding: 2rem;
+
+      &__card {
+
+        grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
+        background: rgba( 255, 255, 255, 0 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 1px );
+        -webkit-backdrop-filter: blur( 1px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        margin-bottom: 3rem;
+      }
     }
   
     &__title {
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');      font-family: 'Dancing Script', cursive;
+      font-family: 'Caveat', cursive;
+      // @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+      // font-family: 'Indie Flower', cursive;
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       font-weight: 600;
@@ -25,17 +41,40 @@
     }
   
     &__img {
-      margin-left: auto;
-      margin-right: auto;
+      display: block;
       width: 90%;
+      margin: 1rem auto;
+      height: auto;
       border-radius: 5%;
     }
   
-    &__p {
-      font-size: 1.1rem;
+    &__paragraph {
+      
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
       text-align: left;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      margin-top: 1rem;
+
+      ul{
+        list-style-type: circle;
+        font-size: 1.05rem;
+        margin: auto;
+      }
+
+      li{
+        margin: 0.5rem;
+      }
+
+      p{
+        margin: 0.5rem;
+        text-align: center;
+      }
     }
   }
   

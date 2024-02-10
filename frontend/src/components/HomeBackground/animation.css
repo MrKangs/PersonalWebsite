@@ -152,6 +152,42 @@
 
 }
 
+/* .tree {
+	position: relative;
+	margin: 0 auto;
+	height: 200px;
+	width: 100px;
+  }
+  
+  .tree::before,
+  .tree::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+  }
+  
+  .tree::before {
+	border-bottom: 100px solid #034703;
+	bottom: 50px;
+  }
+  
+  .tree::after {
+	border-bottom: 50px solid #034703;
+  }
+  
+  .tree__leaves {
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	width: 20px;
+	background: #663300;
+	left: 40px;
+  } */
+
 @media screen and (max-width: 768px){
     .sun, .moon{
         display: none;

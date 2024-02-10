@@ -5,6 +5,7 @@ import { Background } from '../../components';
 import { NightContext } from '../../contexts';
 import { client, urlFor } from '../../client';
 import Error from '../Error/Error';
+import Typewriter from 'typewriter-effect';
 
 const ProjectDetails = () => {
   const [project, setProject] = useState();
@@ -35,6 +36,18 @@ const ProjectDetails = () => {
     fetchData();
   }, [slug]);
 
+  const handleTypewriterInit = (typewriter) => {
+    let typewriterInstance = typewriter.changeDelay(15);
+    project.description.forEach((paragraph, i) => {
+      typewriterInstance = typewriterInstance.typeString(paragraph);
+      if (i < project.description.length - 1) {
+        typewriterInstance = typewriterInstance.pauseFor(10).typeString('<br><br>');
+      }
+    });
+    typewriterInstance.start();
+  };
+    
+
   
   if (loading) {
     return <div><Background /></div>;
@@ -52,28 +65,34 @@ const ProjectDetails = () => {
           <div className="project-details__content grid">
             <div className="project-details__data">
               <h1 className="project-details__title" style={textColor}>{project.title}</h1>
-              <h2 className="project-details__subtitle" style={textColor}>{project.subtitle}</h2>
-              <h3 className="project-details__date" style={textColor}>{project.startdate} to {project.enddate}</h3>
+              <p className="project-details__subtitle" style={textColor}>{project.subtitle}</p>
+              <h3 className="project-details__date" style={textColor}>From {project.startdate} to {project.enddate}</h3>
               <img src={urlFor(project.image)} alt="Project" className="project-details__img" />
-              <div>
-                <h3 className="project-details__skills" style={textColor}>Skills</h3>
+              <div className='project-details__description'>
+                <h3 className="project-details__description__title" style={textColor}>Description</h3>
+                <div className="project-details__description__paragraphs">
+                  <Typewriter
+                    onInit={handleTypewriterInit}
+                    options={{
+                      deleteSpeed: 20,
+                      delay: 0,
+                      loop: false,
+                    }}
+                  />
+                </div>
+              </div>
+              <div className='project-details__others'>
+                <h3 className="project-details__skills__title" style={textColor}>Skills</h3>
                 {project.skills.map((skill, index) => (
-                  <tag key={index} className="project-details__skill" style={textColor}>{skill}</tag>
+                  <tag key={index} className="project-details__skills__values" style={textColor}>{skill}</tag>
                 ))}
-              </div>
-              <div>
-                <h3 className="project-details__description" style={textColor}>Description</h3>
-                {project.description.map((paragraph, index) => (
-                  <p key={index} className="project-details__description" style={textColor}>{paragraph}</p>
+
+                <h3 className="project-details__references__title" style={textColor}>References</h3>
+                {project.links.map((link, index) => (
+                  <a key={index} href={link} target="_blank" rel="noreferrer" className="project-details__references__links">
+                  {link}
+                </a>
                 ))}
-              </div>
-              <div>
-                <h3 className="linkTitle" style={textColor}>References</h3>
-              {project.links.map((link, index) => (
-                <a key={index} href={link} target="_blank" rel="noreferrer" className="project-details__link">
-                {link}
-              </a>
-              ))}
               </div>
             </div>
           </div>

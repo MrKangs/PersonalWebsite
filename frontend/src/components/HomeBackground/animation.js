@@ -102,7 +102,7 @@ const HomeBackground = () => {
         isNight: false,
         textWhite: false,
       });
-      endDegreePercentage = 15 * (currentHour + minutePercentage) - 270;
+      endDegreePercentage = 15 * (currentHour + minutePercentage) - 90;
     } else if (currentHour >= 18 && currentHour < 19) {
       setBackground({
         backgroundSky: ['16__20__m'],
@@ -190,6 +190,10 @@ const HomeBackground = () => {
           <div className={`${background.object}`}></div>
         </RiseElement>
       </div>
+      <div class="tree">
+        <div class="tree__leaves"></div>
+      </div>
+
     </>
       
   );

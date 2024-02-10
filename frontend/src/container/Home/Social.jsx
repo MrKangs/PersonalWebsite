@@ -21,8 +21,6 @@ const Social = () => {
         setLoading(false);})
     }, []);
 
-    console.log(home);
-
   if (loading) {
     return <div></div>;
   }
