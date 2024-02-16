@@ -21,6 +21,7 @@ const About = () => {
         const query = '*[_type == "about"]';
         const aboutData = await client.fetch(query);
         setAbout(aboutData);
+        console.log(about[0].title, about[0].title2);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching about data:', error);
@@ -31,20 +32,14 @@ const About = () => {
     fetchData();
   }, []);
 
-  const handleTypewriterInit = (typewriter) => {
-    let typewriterInstance = typewriter.changeDelay(15);
-    about[0].bio.forEach((paragraph, i) => {
-      typewriterInstance = typewriterInstance.typeString(paragraph);
-      if (i < about[0].bio.length - 1) {
-        typewriterInstance = typewriterInstance.pauseFor(500).typeString('<br><br>');
-      }
-    });
-    typewriterInstance.start();
-  };
-
   const handleTypewriterTitleInit = (typewriter) => {
     typewriter
-    .typeString(about[0].title)
+    .typeString(about[0].title1)
+    .pauseFor(2000)
+    .deleteChars(18)
+    .typeString(about[0].title2)
+    .pauseFor(2000)
+    .deleteAll(12)
     .start();
   };
 
@@ -61,16 +56,16 @@ const About = () => {
             <Typewriter
               onInit={handleTypewriterTitleInit}
               options={{
-                deleteSpeed: 200,
-                delay: 50,
-                loop: false,
+                deleteSpeed: 12,
+                delay: 30,
+                loop: true,
               }}
             />
           </h1>
           <div className="about__content grid">
             <div className="about__data">
               <div className="about__data__card grid">
-                <div className="about__paragraph">
+                <div className="about__paragraph" id='intro'>
                   <PortableText value={about[0].intro} />
                 </div>
                 <img src={urlFor(about[0].image1)} alt="my Student Picture" className="about__img" />

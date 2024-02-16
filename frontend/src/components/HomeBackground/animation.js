@@ -186,14 +186,31 @@ const HomeBackground = () => {
             </div>
           )}
         </div>
+          {/* <div>
+              {!background.isNight && (
+              <div id="leaves">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i> 
+              </div>
+            )}
+        </div> */}
         <RiseElement>
           <div className={`${background.object}`}></div>
         </RiseElement>
       </div>
-      <div class="tree">
-        <div class="tree__leaves"></div>
-      </div>
-
     </>
       
   );

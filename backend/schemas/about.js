@@ -4,11 +4,17 @@ export default {
     type: "document",
     fields: [
         {
-        name: "title",
-        title: "Title",
+        name: "title1",
+        title: "Title 1",
         type: "string",
-        description: "Title of the about section"
+        description: "Title 1 of the about section"
         },
+        {
+          name: "title2",
+          title: "Title 2",
+          type: "string",
+          description: "Title 2 of the about section"
+          },
         {
         name: "image1",
         title: "Intro Image",

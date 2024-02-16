@@ -38,11 +38,21 @@ export default {
             ],
         },
         {
+            name: 'topics',
+            title: 'Topics',
+            type: 'array',
+            of: [
+                {
+                    type: 'string'
+                }
+            ],
+        },
+        {
             name: 'description',
             title: 'Description',
             description: 'Description of the project',
             type: 'array',
-            of: [{type: 'string'}]
+            of: [{type: 'block'}]
         },
         {
             name: "image",

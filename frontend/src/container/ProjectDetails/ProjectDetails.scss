@@ -1,15 +1,171 @@
 .project-details {
     &__container {
       display: grid;
+      grid-template-columns: 100px repeat(3, 1fr);
+      grid-gap: 20px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__back-button{
+      grid-column: 1;
+      grid-row: 2;
+      font-size: 2rem;
+      display: flex;
+      justify-content: right;
+      background: transparent;
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    &__content {
+      grid-column: 1 / -1;
+    }
+  
+    &__data {
+      display: grid;
+      grid-template-columns: 100px repeat(3, 1fr);
+    }
+  
+    &__title {
+      grid-column: 2 / -1;
+      margin: 0;
+      font-size: 2rem;
+    }
+  
+    &__subtitle {
+      grid-column: 2;
+      margin: 0;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+  
+    &__date {
+      grid-column: 4;
+      margin: 0;
+      font-size: 1rem;
+      text-align: end;
+      font-style: italic;
+      margin-right: 1rem;
+    }
+  
+    &__img {
+      grid-row: 3;
+      grid-column: 1 / -1;
+      max-width: 40%;
+      border-radius: 3%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    &__description {
+      grid-column: 2 / span 2;
+      grid-row: 4 / 6;
+      margin: 0;
+      font-weight: 400;
+      margin-left: 1rem;
+  
+      &__title {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+      }
+  
+      &__paragraphs {
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+        font-family: 'Inconsolata', monospace;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+  
+    &__skills {
+      margin-right: 1rem;
+      &__title {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+  
+      &__values {
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+        font-family: 'Inconsolata', monospace;
+        margin: 0;
+        font-size: 1rem;
+        display: block;
+      }
+    }
+
+    &__topics{
+      margin-right: 1rem;
+      &__title {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+  
+      &__values {
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+        font-family: 'Inconsolata', monospace;
+        margin: 0;
+        font-size: 1rem;
+        display: block;
+
+      }
+    }
+
+    &__others{
+      grid-column: 4;
+      grid-row: 4;
+      margin: 0;
+      font-size: 1.2rem;
+      text-align: end;
+      margin-right: 1rem;
+    }
+  
+    &__references {
+      margin-right: 1rem;
+      &__title {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+  
+      &__links {
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+        font-family: 'Inconsolata', monospace;
+        margin: 0;
+        font-size: 1rem;
+        color: inherit;
+        text-decoration: none;
+        display: block;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  p{
+    margin-bottom: 1rem;
+  }
+
+@media screen and (max-width: 768px) {
+  .project-details {
+    &__container {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
-      background: rgba( 255, 255, 255, 0.15 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 6px );
-    -webkit-backdrop-filter: blur( 6px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    transition: transform 0.3s ease-in-out;
+      margin: auto;
+    }
+
+    &__back-button{
+      display: none;
     }
   
     &__content {
@@ -19,6 +175,8 @@
     &__data {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      margin: 1rem;
+      margin-top: 0rem;
     }
   
     &__title {
@@ -45,7 +203,7 @@
     &__img {
       grid-row: 3;
       grid-column: 1 / -1;
-      max-width: 100%;
+      max-width: 70%;
       border-radius: 1%;
       height: auto;
       display: block;
@@ -76,6 +234,23 @@
     &__skills {
       &__title {
         margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+  
+      &__values {
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+        font-family: 'Inconsolata', monospace;
+        margin: 0;
+        font-size: 1rem;
+        display: block;
+
+      }
+    }
+
+    &__topics{
+      &__title {
+        margin-top: 1.5rem;
         margin-bottom: 0.5rem;
         font-size: 1.2rem;
       }
@@ -121,4 +296,4 @@
       }
     }
   }
-  
+}
