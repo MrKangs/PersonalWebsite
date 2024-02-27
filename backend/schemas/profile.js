@@ -24,7 +24,8 @@ export default {
         {
             name: 'shortbio',
             title: 'Short Bio',
-            type: 'text',
+            type: 'array',
+            of: [{type: 'block'}],
             description: 'Short bio of the profile'
         },
         {

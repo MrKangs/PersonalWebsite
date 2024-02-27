@@ -105,6 +105,3 @@ const About = () => {
 };
 
 export default About;
-
-// Goals and Aims 
-// Write it in a resume style ish

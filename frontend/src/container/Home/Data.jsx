@@ -2,6 +2,7 @@ import { client } from '../../client';
 import React, {useEffect, useState} from 'react'
 import { NightContext } from '../../contexts';
 import Typewriter from 'typewriter-effect';
+import { PortableText } from '@portabletext/react';
 
 
 const Data = () => {
@@ -27,6 +28,23 @@ const Data = () => {
     return <div></div>;
   }
 
+  console.log(home[0]["shortbio"]);
+  const shortBioText = home[0]['shortbio']
+  .map((block) => block.children)
+  .flat()
+  .map((child) => {
+    if (child.marks && child.marks.length > 0) {
+      return child.marks.reduce((acc, mark) => {
+        return `${acc}<${mark}>${child.text}</${mark}>`;
+      }, '');
+    } else {
+      return child.text;
+    }
+  })
+  .join('');  
+  console.log(shortBioText);
+
+
   return (
     <div className="home__data" >
         <h1 className="home__title" style={textColor}>{home[0]["name"]}</h1>
@@ -35,7 +53,7 @@ const Data = () => {
           <Typewriter
             onInit={(typewriter) => {
               typewriter
-                .typeString(home[0]["shortbio"])
+                .typeString(shortBioText)
                 .pauseFor(3000)
                 .deleteAll(12)
                 .typeString("Check out this page on a <strong>different time</strong> for a different background experience!")

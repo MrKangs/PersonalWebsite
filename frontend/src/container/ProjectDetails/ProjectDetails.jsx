@@ -57,7 +57,7 @@ const ProjectDetails = () => {
           <div className="project-details__content grid">
             <div className="project-details__data">
               <h1 className="project-details__title" style={textColor}>{project.title}</h1>
-              <button onClick={() => navigate('/projects')} className='project-details__back-button uil uil-previous'></button>
+              <button onClick={() => navigate('/projects')} className='project-details__back-button uil uil-previous' style={textColor}></button>
               <p className="project-details__subtitle" style={textColor}>{project.subtitle}</p>
               <h3 className="project-details__date" style={textColor}>{new Date(project.startdate).getFullYear()}/{new Date(project.startdate).getMonth() + 1} - {new Date(project.enddate).getFullYear()}/{new Date(project.enddate).getMonth() + 1}</h3>
               <img src={urlFor(project.image)} alt="Project" className="project-details__img" />

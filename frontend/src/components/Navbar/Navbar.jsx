@@ -92,8 +92,8 @@ const Navbar = ({backgroundSky}) => {
               </a>
             </li>
             <li className='nav__item'>
-              <a href='/foods' className='nav__link' style={textColor}>
-                <i className='uil uil-utensils-alt nav__icon'></i> Foods
+              <a href='/galleries' className='nav__link' style={textColor}>
+                <i className='uil uil-utensils-alt nav__icon'></i> Gallery
               </a>
             </li>
           </ul>

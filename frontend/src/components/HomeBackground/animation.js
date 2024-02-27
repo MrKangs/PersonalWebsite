@@ -153,7 +153,7 @@ const HomeBackground = () => {
     bottom: 0;
     left: 5%;
     width: 95%;
-    height: 13%;
+    height: 30%;
     overflow: hidden;
     animation: 1 ${riseAnimation} 10s forwards ease-in-out;
     z-index: -4;
