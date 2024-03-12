@@ -56,7 +56,7 @@ const Data = () => {
                 .typeString(shortBioText)
                 .pauseFor(3000)
                 .deleteAll(12)
-                .typeString("Check out this page on a <strong>different time</strong> for a different background experience!")
+                .typeString("Check out this page at a <strong>different time</strong> for a different background experience!")
                 .pauseFor(2000)
                 .deleteAll(12)
                 .start();
