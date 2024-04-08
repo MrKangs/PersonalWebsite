@@ -38,7 +38,7 @@ const Projects = () => {
               <div className="projects__list grid">
                 {projectOverview.map((project, index) => (
                   <div className="project__card" key={index}>
-                    <Link to={`/projects/${project.slug.current}`}>
+                    <Link to={`${project.slug.current}`}>
                       <div className="projects__information">
                         <h2 className="project__title" style={textColor}>{project.title}</h2>
                         <p className="project__description" style={textColor}>{project.description}</p>

@@ -2,7 +2,7 @@ import './App.scss'
 import React, { useState, useEffect } from 'react'
 import moment from 'moment';
 import {Home, About, Foods, Projects, ProjectDetails, Error} from './container';
-import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import {Route, Routes, HashRouter} from 'react-router-dom';
 import {Navbar, ParticlesComponent} from './components'
 import {NightContext} from './contexts'
 
@@ -30,7 +30,7 @@ const App = () => {
       {/* <ParticlesComponent /> */}
 
       <NightContext.Provider value={whiteText}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Navbar />
         <Routes className='main'>
           <Route path="/" element={<Home />} />
@@ -40,7 +40,7 @@ const App = () => {
           <Route path="/projects/:slug" element={<ProjectDetails />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       </NightContext.Provider>
 
     </div>

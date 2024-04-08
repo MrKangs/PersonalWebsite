@@ -77,7 +77,7 @@ const Navbar = ({backgroundSky}) => {
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"} style={Toggle ? toggleMenuColor :  menuColor} >
           <ul className='nav__list grid'>
             <li className='nav__item'>
-              <a href='/about' className={'nav__link'} style={textColor}>
+              <a href='#/about' className={'nav__link'} style={textColor}>
                 <i className='uil uil-user nav__icon'></i> About
               </a>
             </li>
@@ -87,12 +87,12 @@ const Navbar = ({backgroundSky}) => {
               </a>
             </li>
             <li className='nav__item'>
-              <a href='/projects' className='nav__link' style={textColor}>
+              <a href='#/projects' className='nav__link' style={textColor}>
                 <i className='uil uil-code-branch nav__icon'></i> Projects
               </a>
             </li>
             <li className='nav__item'>
-              <a href='/galleries' className='nav__link' style={textColor}>
+              <a href='#/galleries' className='nav__link' style={textColor}>
                 <i className='uil uil-utensils-alt nav__icon'></i> Gallery
               </a>
             </li>
