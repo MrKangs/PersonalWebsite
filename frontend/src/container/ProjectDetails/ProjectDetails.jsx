@@ -37,7 +37,7 @@ const ProjectDetails = () => {
     fetchData();
   }, [slug]);
 
-    
+
 
   
   if (loading) {
@@ -62,7 +62,7 @@ const ProjectDetails = () => {
               <h3 className="project-details__date" style={textColor}>{new Date(project.startdate).getFullYear()}/{new Date(project.startdate).getMonth() + 1} - {new Date(project.enddate).getFullYear()}/{new Date(project.enddate).getMonth() + 1}</h3>
               <img src={urlFor(project.image)} alt="Project" className="project-details__img" />
               <div className='project-details__description'>
-                  <PortableText value={project.description} />
+                  <PortableText value={project.description}/>
               </div>
               <div className='project-details__others'>
                 <div className='project-details__skills'>

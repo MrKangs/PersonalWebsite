@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mrkangs.github.io/PersonalWebsite",
+  "homepage": "https://mrkangs.com",
   "dependencies": {
     "@portabletext/react": "^3.0.11",
     "@sanity/asset-utils": "^1.3.0",

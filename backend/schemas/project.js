@@ -50,7 +50,7 @@ export default {
         {
             name: 'description',
             title: 'Description',
-            description: 'Description of the project',
+            description: 'Description of the project (Shift + Enter for new paragraph)',
             type: 'array',
             of: [{type: 'block'}]
         },
