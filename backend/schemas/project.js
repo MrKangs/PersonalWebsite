@@ -58,6 +58,9 @@ export default {
             name: "image",
             title: "Image",
             type: "image",
+            options: {
+                hotspot: true
+            },
         },
         {
             name: 'links',
@@ -66,6 +69,17 @@ export default {
             of : [
                 {
                     type: 'url'
+                }
+            ]
+        },
+        {
+            name: 'linksname',
+            title: 'Links Name',
+            type: 'array',
+            description: 'Name of the links (Make sure you put them the order of the links above)',
+            of : [
+                {
+                    type: 'string'
                 }
             ]
         },

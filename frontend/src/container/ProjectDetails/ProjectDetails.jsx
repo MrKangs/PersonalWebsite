@@ -81,7 +81,7 @@ const ProjectDetails = () => {
                   <h3 className="project-details__references__title" style={textColor}>References</h3>
                   {project.links.map((link, index) => (
                     <a key={index} href={link} target="_blank" rel="noreferrer" className="project-details__references__links">
-                    {link}
+                    {project.linksname[index]}
                   </a>
                   ))}
                 </div>

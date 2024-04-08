@@ -19,26 +19,41 @@ export default {
         name: "image1",
         title: "Intro Image",
         type: "image",
+        options: {
+          hotspot: true
+      },
         },
         {
             name: "image2",
             title: "Work Image",
             type: "image",
+            options: {
+              hotspot: true
+          },
         },
         {
             name: "image3",
             title: "Skills Image",
             type: "image",
+            options: {
+              hotspot: true
+          },
         },
         {
             name: "image4",
             title: "Hobbies Image",
             type: "image",
+            options: {
+              hotspot: true
+          },
         },
         {
             name: "image5",
             title: "Goals Image",
             type: "image",
+            options: {
+              hotspot: true
+          },
         },
         {
             name: 'intro',
