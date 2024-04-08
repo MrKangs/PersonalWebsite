@@ -30,7 +30,7 @@ const App = () => {
       {/* <ParticlesComponent /> */}
 
       <NightContext.Provider value={whiteText}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename="PersonalWebsite">
         <Navbar />
         <Routes className='main'>
           <Route path="/" element={<Home />} />

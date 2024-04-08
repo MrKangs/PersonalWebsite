@@ -41,7 +41,6 @@ const Data = () => {
     }
   })
   .join('');  
-  console.log(shortBioText);
 
 
   return (
