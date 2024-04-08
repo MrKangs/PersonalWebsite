@@ -10,9 +10,7 @@ createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Helmet>
       <link rel="icon" href={favicon} />
-    </Helmet>\
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    </Helmet>
+    <App />
   </React.StrictMode>
 );
