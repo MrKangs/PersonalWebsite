@@ -65,6 +65,7 @@
         list-style-type: circle;
         font-size: 1.05rem;
         margin: auto;
+        margin-left: 0.5rem;
       }
 
       li{
@@ -130,6 +131,10 @@
       margin-left: 0.5rem;
       margin-right: 0.5rem;
       font-size: 1rem;
+
+      ul{
+        margin-left: 2rem;
+      }
     }
   
     .about__data__card {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import './About.scss';
+import './about.scss';
 import { Background } from '../../components';
 import { client, urlFor } from '../../client';
 import { NightContext } from '../../contexts';

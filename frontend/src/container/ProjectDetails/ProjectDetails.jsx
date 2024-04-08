@@ -62,33 +62,39 @@ const ProjectDetails = () => {
               <h3 className="project-details__date" style={textColor}>{new Date(project.startdate).getFullYear()}/{new Date(project.startdate).getMonth() + 1} - {new Date(project.enddate).getFullYear()}/{new Date(project.enddate).getMonth() + 1}</h3>
               <img src={urlFor(project.image)} alt="Project" className="project-details__img" />
               <div className='project-details__description'>
-                <h3 className="project-details__description__title" style={textColor}>Description</h3>
-                <div className="project-details__description__paragraphs">
                   <PortableText value={project.description} />
-                </div>
               </div>
               <div className='project-details__others'>
-                <h3 className="project-details__skills__title" style={textColor}>Skills</h3>
-                {project.skills.map((skill, index) => (
-                  <tag key={index} className="project-details__skills__values" style={textColor}>{skill}</tag>
-                ))}
-
-                <h3 className="project-details__topics__title" style={textColor}>Topics</h3>
-                {project.topics.map((topic, index) => (
-                  <tag key={index} className="project-details__topics__values" style={textColor}>{topic}</tag>
-                ))}
-
-                <h3 className="project-details__references__title" style={textColor}>References</h3>
-                {project.links.map((link, index) => (
-                  <a key={index} href={link} target="_blank" rel="noreferrer" className="project-details__references__links">
-                  {link}
-                </a>
-                ))}
+                <div className='project-details__skills'>
+                  <h3 className="project-details__skills__title" style={textColor}>Skills</h3>
+                  {project.skills.map((skill, index) => (
+                    <tag key={index} className="project-details__skills__values" style={textColor}>{skill}</tag>
+                  ))}
+                </div>
+                <div className='project-details__topics'>
+                  <h3 className="project-details__topics__title" style={textColor}>Topics</h3>
+                  {project.topics.map((topic, index) => (
+                    <tag key={index} className="project-details__topics__values" style={textColor}>{topic}</tag>
+                  ))}
+                </div>
+                <div className='project-details__references'>
+                  <h3 className="project-details__references__title" style={textColor}>References</h3>
+                  {project.links.map((link, index) => (
+                    <a key={index} href={link} target="_blank" rel="noreferrer" className="project-details__references__links">
+                    {link}
+                  </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      
+
+
+
     </>
   );
 };
