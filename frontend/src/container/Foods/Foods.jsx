@@ -13,8 +13,6 @@ const Foods = () => {
     const query = '*[_type == "food"]';
     client.fetch(query).then((foodOverview) => {
       setFoodOverview(foodOverview);
-      console.log(foodOverview);
-      console.log(urlFor(foodOverview[0].image).url());
       setLoading(false);
     });
   }, []);

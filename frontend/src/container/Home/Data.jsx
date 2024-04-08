@@ -28,7 +28,6 @@ const Data = () => {
     return <div></div>;
   }
 
-  console.log(home[0]["shortbio"]);
   const shortBioText = home[0]['shortbio']
   .map((block) => block.children)
   .flat()

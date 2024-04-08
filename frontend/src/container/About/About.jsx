@@ -21,7 +21,6 @@ const About = () => {
         const query = '*[_type == "about"]';
         const aboutData = await client.fetch(query);
         setAbout(aboutData);
-        console.log(about[0].title, about[0].title2);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching about data:', error);
