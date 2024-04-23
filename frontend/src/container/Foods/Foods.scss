@@ -1,0 +1,17 @@
+.foods{
+
+    &__gallery{
+        margin: 5rem;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+
+    .foods{
+        &__gallery{
+            margin: 2rem;
+        }
+    }
+    
+}
