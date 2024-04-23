@@ -16,7 +16,7 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    const query = '*[_type == "project_overview"]';
+    const query = '*[_type == "project_overview"] | order(priority asc)';
     client.fetch(query).then((projectOverview) => {
       setProjectOverview(projectOverview);
       setLoading(false);})

@@ -31,6 +31,12 @@ export default {
             options: {
                 hotspot: true
             },
+        },
+        {
+            name: 'priority',
+            title: 'Priority',
+            type: 'number',
+            description: 'Priority of the project'
         }
     ]
 }
