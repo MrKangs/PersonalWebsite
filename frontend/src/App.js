@@ -1,7 +1,7 @@
 import './App.scss'
 import React, { useState, useEffect } from 'react'
 import moment from 'moment';
-import {Home, About, Foods, Projects, ProjectDetails, Error} from './container';
+import {Home, About, Gallary, Projects, ProjectDetails, Error} from './container';
 import {Route, Routes, HashRouter} from 'react-router-dom';
 import {Navbar, ParticlesComponent} from './components'
 import {NightContext} from './contexts'
@@ -35,7 +35,7 @@ const App = () => {
         <Routes className='main'>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/galleries" element={<Foods />} />
+          <Route path="/galleries" element={<Gallary />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetails />} />
           <Route path="*" element={<Error />} />

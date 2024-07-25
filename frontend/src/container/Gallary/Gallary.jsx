@@ -1,18 +1,18 @@
-import './Foods.scss';
+import './Gallary.scss';
 import { Background } from '../../components';
 import { client, urlFor } from '../../client';
 import React, { useState, useEffect } from 'react';
 import PhotoAlbum from "react-photo-album";
 import {getImageDimensions} from '@sanity/asset-utils'
 
-const Foods = () => {
-  const [foodOverview, setFoodOverview] = useState([]);
+const Gallary = () => {
+  const [gallaryOverview, setGallaryOverview] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const query = '*[_type == "food"]';
-    client.fetch(query).then((foodOverview) => {
-      setFoodOverview(foodOverview);
+    const query = '*[_type == "gallary"]';
+    client.fetch(query).then((gallaryOverview) => {
+      setGallaryOverview(gallaryOverview);
       setLoading(false);
     });
   }, []);
@@ -23,21 +23,21 @@ const Foods = () => {
 
   const foodPhotos = [];
 
-  foodOverview.map((food, index) => {
-    const {_, height, width} = getImageDimensions(food.image);
+  gallaryOverview.map((gallary, index) => {
+    const {_, height, width} = getImageDimensions(gallary.image);
     foodPhotos.push({
-      src: urlFor(food.image).url(),
+      src: urlFor(gallary.image).url(),
       width: width,
       height: height,
-      link: food.link,
+      link: gallary.link,
     });
   });
 
   return (
     <div>
       <Background />
-      <section className='foods section' id="foods">
-        <div className="foods__gallery">
+      <section className='gallary section' id="gallary">
+        <div className="image__gallery">
           <PhotoAlbum 
             photos={foodPhotos} 
             layout="masonry" 
@@ -53,4 +53,4 @@ const Foods = () => {
   );
 };
 
-export default Foods;
+export default Gallary;

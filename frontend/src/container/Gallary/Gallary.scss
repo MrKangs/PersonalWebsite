@@ -1,14 +1,16 @@
-.foods{
+.image{
 
     &__gallery{
-        margin: 5rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-top: 2rem;
     }
 }
 
 
 @media screen and (max-width: 768px){
 
-    .foods{
+    .gallary{
         &__gallery{
             margin: 2rem;
         }
