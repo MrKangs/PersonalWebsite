@@ -10,9 +10,11 @@
 
 @media screen and (max-width: 768px){
 
-    .gallary{
+    .image{
         &__gallery{
-            margin: 2rem;
+            margin-top: 1rem;
+            margin-left: 1.75rem;
+            margin-right: 1.75rem;
         }
     }
     
