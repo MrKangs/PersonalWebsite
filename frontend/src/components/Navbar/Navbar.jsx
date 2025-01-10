@@ -82,8 +82,8 @@ const Navbar = ({backgroundSky}) => {
               </a>
             </li>
             <li className='nav__item'>
-              <a download="" href="https://drive.google.com/file/d/1PaRs4T1l_ntstGP0VMGLSk5837I3kGN4/view?usp=sharing" target='_blank' style={textColor} className='nav__link' >
-                <i className='uil uil-file-alt nav__icon'></i> Resume
+              <a download="" href="https://drive.google.com/file/d/11yMAVQvAz3UXdeUDUxqFMp6PysBbdn4f/view?usp=sharing" target='_blank' style={textColor} className='nav__link' >
+                <i className='uil uil-file-alt nav__icon'></i> Resume/CV
               </a>
             </li>
             <li className='nav__item'>
