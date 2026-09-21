@@ -25,6 +25,8 @@ jobs:
 
       - run: npm run build
         working-directory: frontend
+        env:
+          CI: false
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
