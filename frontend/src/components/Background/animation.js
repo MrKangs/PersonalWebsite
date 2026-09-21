@@ -1,22 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
-import { createGlobalStyle } from 'styled-components';
 import './animation.css';
 import Navbar from '../Navbar/Navbar';
-
-const GlobalStyle = createGlobalStyle`
-  header {
-    color: ${(props) => props.textColor};
-  }
-
-  body {
-    color: ${(props) => props.textColor};
-    margin: 0;
-    padding: 0;
-  }
-  `
-  ;
-
+import { SkyGlobalStyle, useStars } from '../skyBackground';
 
 const Background = () => {
   const [background, setBackground] = useState({
@@ -24,25 +9,10 @@ const Background = () => {
     isNight: false,
     textWhite: false,
   });
-  const [stars, setStars] = useState([]);
-
-  const generateStars = () => {
-    const starCount = 69;
-    const starsArray = [];
-
-    for (let i = 0; i < starCount; i++) {
-      const star = {
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-      };
-      starsArray.push(star);
-    }
-
-    setStars(starsArray);
-  };
+  const [stars, generateStars] = useStars();
 
   const updateBackground = () => {
-    const currentHour = moment().hour();
+    const currentHour = new Date().getHours();
 
     if (currentHour >= 0 && currentHour < 4) {
       setBackground({
@@ -119,7 +89,7 @@ const Background = () => {
 
   return (
     <div>
-      <GlobalStyle textColor={textColor} />
+      <SkyGlobalStyle textColor={textColor} />
       <Navbar backgroundSky = {background.backgroundSky} />
       <div className="sky">
       <div className={`sky__phase__d sky__${background.backgroundSky}__2`}></div>

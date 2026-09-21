@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
-import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import './animation.css';
 import Navbar from '../Navbar/Navbar';
-
-const GlobalStyle = createGlobalStyle`
-  header {
-    color: ${(props) => props.textColor};
-  }
-
-  body {
-    color: ${(props) => props.textColor};
-    margin: 0;
-    padding: 0;
-  }
-  `
-  ;
+import { SkyGlobalStyle, useStars } from '../skyBackground';
 
 const HomeBackground = () => {
   const [background, setBackground] = useState({
@@ -24,28 +11,14 @@ const HomeBackground = () => {
     isNight: false,
     textWhite: false,
   });
-  const [stars, setStars] = useState([]);
+  const [stars, generateStars] = useStars();
   const [endPoint, setEndPoint] = useState(0);
-
-  const generateStars = () => {
-    const starCount = 69;
-    const starsArray = [];
-
-    for (let i = 0; i < starCount; i++) {
-      const star = {
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-      };
-      starsArray.push(star);
-    }
-
-    setStars(starsArray);
-  };
 
   const updateBackground = () => {
     let endDegreePercentage = 0;
-    const currentHour = moment().hour();
-    const minutePercentage = moment().minute() / 60;
+    const now = new Date();
+    const currentHour = now.getHours();
+    const minutePercentage = now.getMinutes() / 60;
 
     if (currentHour >= 0 && currentHour < 4) {
       setBackground({
@@ -164,7 +137,7 @@ const HomeBackground = () => {
   return (
     <>
       
-      <GlobalStyle textColor={textColor} />
+      <SkyGlobalStyle textColor={textColor} />
       <Navbar backgroundSky = {background.backgroundSky} />
       <div className="sky">
         {background.backgroundSky.map((phase, index) => (

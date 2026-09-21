@@ -1,9 +1,8 @@
 import './App.scss'
 import React, { useState, useEffect } from 'react'
-import moment from 'moment';
 import {Home, About, Gallary, Projects, ProjectDetails, Error} from './container';
 import {Route, Routes, HashRouter} from 'react-router-dom';
-import {Navbar, ParticlesComponent} from './components'
+import {Navbar} from './components'
 import {NightContext} from './contexts'
 
 const App = () => {
@@ -11,7 +10,7 @@ const App = () => {
   const [whiteText, setWhiteText] = useState(false);
 
   const getNight = () => {
-    const currentHour = moment().hour();
+    const currentHour = new Date().getHours();
     if  (currentHour >= 7 && currentHour <18) {
       setWhiteText(false);
     } else {
@@ -25,10 +24,6 @@ const App = () => {
 
   return (
     <div className="App">
-      
-
-      {/* <ParticlesComponent /> */}
-
       <NightContext.Provider value={whiteText}>
       <HashRouter>
         <Navbar />
